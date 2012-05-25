@@ -240,24 +240,6 @@ function training_support_issue_views_default_views() {
     ),
   ));
   $handler->override_option('filters', array(
-    'keys' => array(
-      'operator' => 'optional',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 1,
-        'operator' => 'keys_op',
-        'identifier' => 'keys',
-        'label' => 'Search: Search Terms',
-        'optional' => 1,
-        'remember' => 0,
-      ),
-      'id' => 'keys',
-      'table' => 'search_index',
-      'field' => 'keys',
-      'relationship' => 'none',
-    ),
     'type' => array(
       'operator' => 'in',
       'value' => array(
@@ -274,23 +256,22 @@ function training_support_issue_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'uid' => array(
-      'operator' => 'in',
+    'field_supp_issue_value' => array(
+      'operator' => 'word',
       'value' => '',
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(
-        'use_operator' => 1,
-        'operator' => 'uid_op',
-        'identifier' => 'uid',
-        'label' => 'User: Name',
-        'optional' => 1,
+        'use_operator' => 0,
+        'operator' => 'field_supp_issue_value_op',
+        'identifier' => 'field_supp_issue_value',
+        'label' => 'Search Support Issue Field',
         'remember' => 0,
-        'reduce' => 0,
       ),
-      'id' => 'uid',
-      'table' => 'users',
-      'field' => 'uid',
+      'case' => 1,
+      'id' => 'field_supp_issue_value',
+      'table' => 'node_data_field_supp_issue',
+      'field' => 'field_supp_issue_value',
       'override' => array(
         'button' => 'Override',
       ),
@@ -317,42 +298,6 @@ function training_support_issue_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'field_supp_issue_value' => array(
-      'operator' => 'word',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 1,
-        'operator' => 'field_supp_issue_value_op',
-        'identifier' => 'field_supp_issue_value',
-        'label' => 'Search Support Issue Field',
-        'remember' => 0,
-      ),
-      'case' => 1,
-      'id' => 'field_supp_issue_value',
-      'table' => 'node_data_field_supp_issue',
-      'field' => 'field_supp_issue_value',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
-    'timestamp' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator' => '',
-        'identifier' => 'timestamp',
-        'label' => 'New/Updated Content',
-      ),
-      'id' => 'timestamp',
-      'table' => 'history_user',
-      'field' => 'timestamp',
-      'relationship' => 'none',
-    ),
   ));
   $handler->override_option('access', array(
     'type' => 'role',
@@ -363,9 +308,9 @@ function training_support_issue_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Support Issues that Trainers can fix');
+  $handler->override_option('title', 'Common Training Support Issues');
   $handler->override_option('header', '<p>Working on this for Damian</p>
-<p><h2><a href="http://localhost/ekb3/node/add/train-supp-issue">Add Support Issue</a></h2></p>
+<p><h2><a href="http://dev.ecwknowledgebase.com/node/add/train-supp-issue">Add Support Issue</a></h2></p>
 ');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
