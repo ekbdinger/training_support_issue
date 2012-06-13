@@ -17,6 +17,42 @@ function training_support_issue_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => 'ID',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'link_to_node' => 0,
+      'exclude' => 0,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => 'Title',
       'alter' => array(
@@ -170,40 +206,6 @@ function training_support_issue_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'timestamp' => array(
-      'label' => 'Has new content',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'absolute' => 0,
-        'link_class' => '',
-        'alt' => '',
-        'rel' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'hide_alter_empty' => 1,
-      'link_to_node' => 0,
-      'comments' => 0,
-      'exclude' => 0,
-      'id' => 'timestamp',
-      'table' => 'history_user',
-      'field' => 'timestamp',
-      'relationship' => 'none',
-    ),
     'last_updated' => array(
       'label' => 'Last Update/Comment',
       'alter' => array(
@@ -236,6 +238,40 @@ function training_support_issue_views_default_views() {
       'id' => 'last_updated',
       'table' => 'node_comment_statistics',
       'field' => 'last_updated',
+      'relationship' => 'none',
+    ),
+    'timestamp' => array(
+      'label' => 'Has new content',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'link_to_node' => 0,
+      'comments' => 0,
+      'exclude' => 0,
+      'id' => 'timestamp',
+      'table' => 'history_user',
+      'field' => 'timestamp',
       'relationship' => 'none',
     ),
   ));
@@ -298,6 +334,24 @@ function training_support_issue_views_default_views() {
       ),
       'relationship' => 'none',
     ),
+    'timestamp' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'operator' => '',
+        'identifier' => 'timestamp',
+        'label' => 'Node: Has new content',
+      ),
+      'id' => 'timestamp',
+      'table' => 'history_user',
+      'field' => 'timestamp',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'role',
@@ -309,7 +363,7 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian</p>
+  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim</p>
 <p><h2><a href="http://dev.ecwknowledgebase.com/node/add/train-supp-issue">Add Support Issue</a></h2></p>
 ');
   $handler->override_option('header_format', '2');

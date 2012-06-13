@@ -11,9 +11,10 @@ function training_support_issue_content_default_fields() {
     'field_name' => 'field_supp_issue',
     'type_name' => 'train_supp_issue',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -72,14 +73,78 @@ function training_support_issue_content_default_fields() {
     ),
   );
 
+  // Exported field: field_supp_screen
+  $fields['train_supp_issue-field_supp_screen'] = array(
+    'field_name' => 'field_supp_screen',
+    'type_name' => 'train_supp_issue',
+    'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '1',
+    'list_default' => 1,
+    'description_field' => '1',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => 'training/support_issues/screenshots',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '4M',
+      'max_filesize_per_node' => '6M',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => NULL,
+      'use_default_image' => 0,
+      'label' => 'Screenshots',
+      'weight' => '-1',
+      'description' => 'Upload any images related to this problem',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
   // Exported field: field_supp_solution
   $fields['train_supp_issue-field_supp_solution'] = array(
     'field_name' => 'field_supp_solution',
     'type_name' => 'train_supp_issue',
     'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -140,6 +205,7 @@ function training_support_issue_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Screenshots');
   t('Solution');
   t('Support Issue');
 

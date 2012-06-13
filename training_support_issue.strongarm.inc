@@ -75,14 +75,12 @@ function training_support_issue_strongarm() {
   $strongarm->name = 'content_extra_weights_train_supp_issue';
   $strongarm->value = array(
     'title' => '-5',
-    'revision_information' => '-1',
-    'author' => '0',
-    'options' => '1',
+    'revision_information' => '2',
+    'author' => '3',
+    'options' => '4',
     'comment_settings' => '5',
-    'menu' => '-2',
-    'path' => '4',
-    'attachments' => '3',
-    'print' => '2',
+    'menu' => '1',
+    'taxonomy' => '-2',
   );
   $export['content_extra_weights_train_supp_issue'] = $strongarm;
 
