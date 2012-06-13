@@ -363,7 +363,7 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim</p>
+  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 13, 2012</p>
 <p><h2><a href="http://dev.ecwknowledgebase.com/node/add/train-supp-issue">Add Support Issue</a></h2></p>
 ');
   $handler->override_option('header_format', '2');
@@ -373,18 +373,22 @@ function training_support_issue_views_default_views() {
     'grouping' => '',
     'override' => 1,
     'sticky' => 0,
-    'order' => 'asc',
+    'order' => 'desc',
     'summary' => '',
     'columns' => array(
+      'nid' => 'nid',
       'title' => 'title',
       'field_supp_issue_value' => 'field_supp_issue_value',
       'field_supp_solution_value' => 'field_supp_solution_value',
-      'changed' => 'changed',
       'name' => 'name',
-      'timestamp' => 'timestamp',
       'last_updated' => 'last_updated',
+      'timestamp' => 'timestamp',
     ),
     'info' => array(
+      'nid' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
       'title' => array(
         'sortable' => 1,
         'separator' => '',
@@ -397,19 +401,15 @@ function training_support_issue_views_default_views() {
         'sortable' => 1,
         'separator' => '',
       ),
-      'changed' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
       'name' => array(
         'sortable' => 1,
         'separator' => '',
       ),
-      'timestamp' => array(
-        'separator' => '',
-      ),
       'last_updated' => array(
         'sortable' => 1,
+        'separator' => '',
+      ),
+      'timestamp' => array(
         'separator' => '',
       ),
     ),

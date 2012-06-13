@@ -73,6 +73,64 @@ function training_support_issue_content_default_fields() {
     ),
   );
 
+  // Exported field: field_supp_molecule
+  $fields['train_supp_issue-field_supp_molecule'] = array(
+    'field_name' => 'field_supp_molecule',
+    'type_name' => 'train_supp_issue',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_supp_molecule][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Molecule Title',
+      'weight' => 0,
+      'description' => '',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
   // Exported field: field_supp_screen
   $fields['train_supp_issue-field_supp_screen'] = array(
     'field_name' => 'field_supp_screen',
@@ -205,6 +263,7 @@ function training_support_issue_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Molecule Title');
   t('Screenshots');
   t('Solution');
   t('Support Issue');
