@@ -78,16 +78,17 @@ function training_support_issue_content_default_fields() {
     'field_name' => 'field_supp_molecule',
     'type_name' => 'train_supp_issue',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -173,7 +174,7 @@ function training_support_issue_content_default_fields() {
     'description_field' => '1',
     'widget' => array(
       'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => 'training/support_issues/screenshots',
+      'file_path' => 'training_dept/support_issues/screenshots',
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '4M',
       'max_filesize_per_node' => '6M',

@@ -357,14 +357,14 @@ function training_support_issue_views_default_views() {
     'type' => 'role',
     'role' => array(
       3 => 3,
+      33 => 33,
     ),
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 13, 2012</p>
-<p><h2><a href="http://dev.ecwknowledgebase.com/node/add/train-supp-issue">Add Support Issue</a></h2></p>
+  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 18, 2012</p>
 ');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
@@ -386,7 +386,7 @@ function training_support_issue_views_default_views() {
     ),
     'info' => array(
       'nid' => array(
-        'sortable' => 0,
+        'sortable' => 1,
         'separator' => '',
       ),
       'title' => array(
@@ -416,7 +416,7 @@ function training_support_issue_views_default_views() {
     'default' => 'last_updated',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'training/support/issues');
+  $handler->override_option('path', 'trainer/support/issues');
   $handler->override_option('menu', array(
     'type' => 'none',
     'title' => '',
