@@ -197,7 +197,7 @@ function training_support_issue_views_default_views() {
       'link_to_user' => 1,
       'overwrite_anonymous' => 0,
       'anonymous_text' => '',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'name',
       'table' => 'users',
       'field' => 'name',
@@ -238,6 +238,70 @@ function training_support_issue_views_default_views() {
       'id' => 'last_updated',
       'table' => 'node_comment_statistics',
       'field' => 'last_updated',
+      'relationship' => 'none',
+    ),
+    'tid' => array(
+      'label' => 'Categories',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 1,
+        'path' => 'trainer/support/issues?field_supp_issue_value=&field_supp_solution_value=&tid=[tid-tid]',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'type' => 'separator',
+      'separator' => ', ',
+      'link_to_taxonomy' => 0,
+      'limit' => 0,
+      'vids' => array(
+        12 => 0,
+        11 => 0,
+        14 => 0,
+        15 => 0,
+        30 => 0,
+        16 => 0,
+        25 => 0,
+        31 => 0,
+        19 => 0,
+        23 => 0,
+        5 => 0,
+        7 => 0,
+        18 => 0,
+        22 => 0,
+        9 => 0,
+        32 => 0,
+        24 => 0,
+        17 => 0,
+        10 => 0,
+        27 => 0,
+        26 => 0,
+        29 => 0,
+        28 => 0,
+      ),
+      'exclude' => 0,
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'override' => array(
+        'button' => 'Override',
+      ),
       'relationship' => 'none',
     ),
     'timestamp' => array(
@@ -352,6 +416,34 @@ function training_support_issue_views_default_views() {
       ),
       'relationship' => 'none',
     ),
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(),
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'tid_op',
+        'identifier' => 'tid',
+        'label' => 'Taxonomy: Term',
+        'optional' => 1,
+        'single' => 1,
+        'remember' => 0,
+        'reduce' => 0,
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'vid' => '32',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'role',
@@ -364,10 +456,12 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 18, 2012</p>
+  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 19, 2012</p>
 ');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
+  $handler->override_option('items_per_page', 20);
+  $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',

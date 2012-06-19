@@ -80,7 +80,9 @@ function training_support_issue_strongarm() {
     'options' => '4',
     'comment_settings' => '5',
     'menu' => '1',
-    'taxonomy' => '-2',
+    'taxonomy' => '-4',
+    'path' => '7',
+    'print' => '6',
   );
   $export['content_extra_weights_train_supp_issue'] = $strongarm;
 
@@ -97,7 +99,7 @@ function training_support_issue_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'upload_train_supp_issue';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['upload_train_supp_issue'] = $strongarm;
 
   return $export;
