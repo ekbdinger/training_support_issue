@@ -425,7 +425,7 @@ function training_support_issue_views_default_views() {
         'use_operator' => 0,
         'operator' => 'tid_op',
         'identifier' => 'tid',
-        'label' => 'Taxonomy: Term',
+        'label' => 'Filter by Category',
         'optional' => 1,
         'single' => 1,
         'remember' => 0,
@@ -456,8 +456,8 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 19, 2012</p>
-');
+  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 26, 2012</p>
+<p><strong>Use quotes to search for exact phrases, for example ""vitals not appearing"</strong></p>');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 20);
