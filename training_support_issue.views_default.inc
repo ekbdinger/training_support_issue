@@ -362,7 +362,7 @@ function training_support_issue_views_default_views() {
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(
-        'use_operator' => 0,
+        'use_operator' => 1,
         'operator' => 'field_supp_issue_value_op',
         'identifier' => 'field_supp_issue_value',
         'label' => 'Search Support Issue Field',
@@ -398,24 +398,6 @@ function training_support_issue_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'timestamp' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator' => '',
-        'identifier' => 'timestamp',
-        'label' => 'Node: Has new content',
-      ),
-      'id' => 'timestamp',
-      'table' => 'history_user',
-      'field' => 'timestamp',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
     'tid' => array(
       'operator' => 'or',
       'value' => array(),
@@ -444,6 +426,27 @@ function training_support_issue_views_default_views() {
       'relationship' => 'none',
       'reduce_duplicates' => 0,
     ),
+    'keys' => array(
+      'operator' => 'optional',
+      'value' => '',
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'keys_op',
+        'identifier' => 'keys',
+        'label' => 'Search: Search Terms',
+        'optional' => 1,
+        'remember' => 0,
+      ),
+      'id' => 'keys',
+      'table' => 'search_index',
+      'field' => 'keys',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'role',
@@ -460,7 +463,7 @@ function training_support_issue_views_default_views() {
 <p><strong>Use quotes to search for exact phrases, for example ""vitals not appearing"</strong></p>');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
-  $handler->override_option('items_per_page', 20);
+  $handler->override_option('items_per_page', 0);
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
