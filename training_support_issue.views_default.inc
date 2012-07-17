@@ -383,7 +383,7 @@ function training_support_issue_views_default_views() {
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(
-        'use_operator' => 0,
+        'use_operator' => 1,
         'operator' => 'field_supp_solution_value_op',
         'identifier' => 'field_supp_solution_value',
         'label' => 'Search Solution',
@@ -426,27 +426,6 @@ function training_support_issue_views_default_views() {
       'relationship' => 'none',
       'reduce_duplicates' => 0,
     ),
-    'keys' => array(
-      'operator' => 'optional',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 0,
-        'operator' => 'keys_op',
-        'identifier' => 'keys',
-        'label' => 'Search: Search Terms',
-        'optional' => 1,
-        'remember' => 0,
-      ),
-      'id' => 'keys',
-      'table' => 'search_index',
-      'field' => 'keys',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
   ));
   $handler->override_option('access', array(
     'type' => 'role',
@@ -459,8 +438,7 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>Working on this for Damian, Greg, Lindsay and Azim.  Last updated on June 26, 2012</p>
-<p><strong>Use quotes to search for exact phrases, for example ""vitals not appearing"</strong></p>');
+  $handler->override_option('header', '<p><strong>Use quotes to search for exact phrases, for example ""vitals not appearing"</strong></p>');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 0);
