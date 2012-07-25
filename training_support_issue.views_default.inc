@@ -17,6 +17,42 @@ function training_support_issue_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
+    'counter' => array(
+      'label' => '#',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<strong>[counter].</strong>',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'counter_start' => '1',
+      'exclude' => 0,
+      'id' => 'counter',
+      'table' => 'views',
+      'field' => 'counter',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
     'nid' => array(
       'label' => 'ID',
       'alter' => array(
@@ -44,7 +80,7 @@ function training_support_issue_views_default_views() {
       'empty_zero' => 0,
       'hide_alter_empty' => 1,
       'link_to_node' => 0,
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'nid',
       'table' => 'node',
       'field' => 'nid',
@@ -357,12 +393,12 @@ function training_support_issue_views_default_views() {
       'relationship' => 'none',
     ),
     'field_supp_issue_value' => array(
-      'operator' => 'word',
+      'operator' => 'contains',
       'value' => '',
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(
-        'use_operator' => 1,
+        'use_operator' => 0,
         'operator' => 'field_supp_issue_value_op',
         'identifier' => 'field_supp_issue_value',
         'label' => 'Search Support Issue Field',
@@ -378,12 +414,12 @@ function training_support_issue_views_default_views() {
       'relationship' => 'none',
     ),
     'field_supp_solution_value' => array(
-      'operator' => 'word',
+      'operator' => 'contains',
       'value' => '',
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(
-        'use_operator' => 1,
+        'use_operator' => 0,
         'operator' => 'field_supp_solution_value_op',
         'identifier' => 'field_supp_solution_value',
         'label' => 'Search Solution',
@@ -438,7 +474,6 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p><strong>Use quotes to search for exact phrases, for example ""vitals not appearing"</strong></p>');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 0);
