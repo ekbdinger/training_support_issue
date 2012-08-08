@@ -198,11 +198,14 @@ function training_support_issue_views_default_views() {
         'multiple_from' => '',
         'multiple_reversed' => FALSE,
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'field_supp_solution_value',
       'table' => 'node_data_field_supp_solution',
       'field' => 'field_supp_solution_value',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
     'name' => array(
       'label' => 'Author',
@@ -475,7 +478,7 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>The pages below are all common support issues submitted by onsite trainers.   These are cases that can be easily resolved by the onsite trainer.  Please use this as a reference before submitting a support case.</p>  ');
+  $handler->override_option('header', '<p>The pages below are all common support issues submitted by onsite trainers.   These are cases that can be easily resolved by the onsite trainer.  Please use this as a reference before submitting a support case.  Last updated on August 8, 2012</p>  ');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 0);
@@ -488,15 +491,20 @@ function training_support_issue_views_default_views() {
     'order' => 'desc',
     'summary' => '',
     'columns' => array(
+      'counter' => 'counter',
       'nid' => 'nid',
       'title' => 'title',
       'field_supp_issue_value' => 'field_supp_issue_value',
       'field_supp_solution_value' => 'field_supp_solution_value',
       'name' => 'name',
       'last_updated' => 'last_updated',
+      'tid' => 'tid',
       'timestamp' => 'timestamp',
     ),
     'info' => array(
+      'counter' => array(
+        'separator' => '',
+      ),
       'nid' => array(
         'sortable' => 1,
         'separator' => '',
@@ -519,6 +527,9 @@ function training_support_issue_views_default_views() {
       ),
       'last_updated' => array(
         'sortable' => 1,
+        'separator' => '',
+      ),
+      'tid' => array(
         'separator' => '',
       ),
       'timestamp' => array(
