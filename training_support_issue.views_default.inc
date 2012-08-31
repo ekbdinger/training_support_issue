@@ -478,7 +478,7 @@ function training_support_issue_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Common Training Support Issues');
-  $handler->override_option('header', '<p>The pages below are all common support issues submitted by onsite trainers.   These are cases that can be easily resolved by the onsite trainer.  Please use this as a reference before submitting a support case.  Last updated on August 8, 2012</p>  ');
+  $handler->override_option('header', '<p>The pages below are all common support issues submitted by onsite trainers.   These are cases that can be easily resolved by the onsite trainer.  Please use this as a reference before submitting a support case.  Last updated on August 27, 2012</p>  ');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 0);

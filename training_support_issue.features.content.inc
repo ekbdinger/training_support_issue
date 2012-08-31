@@ -262,11 +262,81 @@ function training_support_issue_content_default_fields() {
     ),
   );
 
+  // Exported field: field_supp_source
+  $fields['train_supp_issue-field_supp_source'] = array(
+    'field_name' => 'field_supp_source',
+    'type_name' => 'train_supp_issue',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => '',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'optional',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Source',
+      'weight' => '8',
+      'description' => 'The presentation or file that I found this information in',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Molecule Title');
   t('Screenshots');
   t('Solution');
+  t('Source');
   t('Support Issue');
 
   return $fields;
